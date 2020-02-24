@@ -1,0 +1,47 @@
+CREATE TABLE Authors (
+    No INT,
+    Fname VARCHAR(50),
+    Lname VARCHAR(50),
+    PRIMARY KEY (No),
+    UNIQUE INDEX (NO),
+    INDEX (Fname)
+);
+
+CREATE TABLE Books (
+    BookID INT,
+    Title VARCHAR(42),
+    No_of_Pages INT,
+    Publish_No INT,
+    Category VARCHAR(24),
+    PubDate DATETIME,
+    PRIMARY KEY (BookID),
+    UNIQUE INDEX (BookID)
+);
+
+CREATE TABLE Locations (
+    No INT,
+    Location VARCHAR(100),
+    PRIMARY KEY (No),
+    UNIQUE INDEX (NO)
+);
+
+CREATE TABLE Publishers (
+    No INT,
+    Publisher_Name VARCHAR(50),
+    PhoneNo VARCHAR(12),
+    PRIMARY KEY (No),
+    UNIQUE INDEX (NO)
+);
+
+CREATE TABLE Sent_to (
+    Author_ID INT,
+    Publisher_No INT,
+    INDEX (Author_ID),
+    INDEX (Publisher_No)
+);
+
+CREATE TABLE Write_to (
+    Book_ID INT,
+    Author_ID INT,
+    UNIQUE INDEX (Book_ID)
+);
